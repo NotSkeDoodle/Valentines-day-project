@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #f9a8d4, #fbcfe8);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  animation: pop-in 0.8s ease-out;
+}
+
+@keyframes pop-in {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: #e91e63;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buttons {
+  margin-top: 30px;
+}
+
+/* Button Styles */
+button {
+  background: linear-gradient(135deg, #f50057, #ff4081);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.5em;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transform-origin: center;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #d50057, #c51162);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#yesButton {
+  transform-origin: center;
+}
+
+/* Hidden Final Page Styles */
+.hidden {
+  display: none;
+  text-align: center;
+}
+
+#finalMessage {
+  animation: fade-in 1s ease-in;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#finalMessage h2 {
+  font-size: 2.5em;
+  color: #ff1744;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+#finalMessage img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  margin-top: 20px;
+  animation: pop-in 0.5s ease-in-out;
+}
+
+/* Floating Hearts Animation */
+@keyframes float-heart {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  font-size: 2em;
+  color: #ff4081;
+  animation: float-heart 6s linear infinite;
+  left: calc(50% - 1em);
+}
